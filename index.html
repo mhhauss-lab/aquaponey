@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌊🐴 AquaPoneyBike Allennes - La Révolution Fitness Aquatique! 🚴💦</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@400;700&family=Righteous&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Comic Neue', cursive;
+            background: linear-gradient(45deg, #ff6b9d 0%, #c06c84 25%, #6c5ce7 50%, #00b894 75%, #ffeaa7 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            overflow-x: hidden;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"><circle cx="10" cy="10" r="8" fill="%23ff6b9d"/></svg>'), auto;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Floating bubbles */
+        .bubble {
+            position: fixed;
+            bottom: -100px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float 6s infinite ease-in-out;
+            z-index: 0;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0) scale(1);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-120vh) translateX(100px) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px 20px;
+            text-align: center;
+            border-bottom: 10px solid #ffd700;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '🌊🐴🚴💦🌊🐴🚴💦🌊🐴🚴💦';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            font-size: 40px;
+            animation: marquee 15s linear infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes marquee {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        h1 {
+            font-family: 'Bangers', cursive;
+            font-size: 4em;
+            color: #fff;
+            text-shadow: 5px 5px 0px #ff1493, 10px 10px 0px #00ffff, 15px 15px 20px rgba(0,0,0,0.5);
+            animation: rainbow 3s infinite, bounce 2s infinite;
+            letter-spacing: 3px;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes rainbow {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.05); }
+        }
+
+        .tagline {
+            font-family: 'Righteous', cursive;
+            font-size: 1.8em;
+            color: #ffd700;
+            margin-top: 10px;
+            text-shadow: 3px 3px 0px #ff1493, 5px 5px 10px rgba(0,0,0,0.5);
+            animation: blink 2s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0.7; }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3), inset 0 0 30px rgba(255,255,255,0.5);
+            border: 8px solid;
+            border-image: linear-gradient(45deg, #ff6b9d, #c06c84, #6c5ce7, #00b894, #ffeaa7) 1;
+            animation: sectionPulse 3s infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            animation: rotate 10s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes sectionPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+
+        h2 {
+            font-family: 'Bangers', cursive;
+            font-size: 3em;
+            color: #6c5ce7;
+            text-align: center;
+            margin-bottom: 30px;
+            text-shadow: 3px 3px 0px #ff6b9d, 6px 6px 10px rgba(0,0,0,0.2);
+            position: relative;
+        }
+
+        h2::before, h2::after {
+            content: '⭐';
+            margin: 0 20px;
+            animation: spin 3s linear infinite;
+            display: inline-block;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .benefit-card {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transform: rotate(-2deg);
+            transition: all 0.3s;
+            border: 5px dashed #ff6b9d;
+        }
+
+        .benefit-card:nth-child(even) {
+            transform: rotate(2deg);
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            color: white;
+        }
+
+        .benefit-card:hover {
+            transform: rotate(0deg) scale(1.1);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .benefit-icon {
+            font-size: 4em;
+            margin-bottom: 15px;
+            animation: wiggle 2s infinite;
+        }
+
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        .benefit-title {
+            font-family: 'Righteous', cursive;
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff1493, #ff6b9d, #ff1493);
+            background-size: 200% 200%;
+            color: white;
+            padding: 25px 60px;
+            font-family: 'Bangers', cursive;
+            font-size: 2.5em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(255,20,147,0.5);
+            text-decoration: none;
+            animation: buttonPulse 2s infinite, gradientShift 3s ease infinite;
+            margin: 20px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '✨';
+            position: absolute;
+            left: -30px;
+            animation: sparkle 2s infinite;
+        }
+
+        .cta-button::after {
+            content: '✨';
+            position: absolute;
+            right: -30px;
+            animation: sparkle 2s infinite 1s;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1.5); }
+        }
+
+        @keyframes buttonPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .cta-button:hover {
+            transform: scale(1.2) rotate(-3deg);
+            box-shadow: 0 15px 50px rgba(255,20,147,0.8);
+        }
+
+        .price-box {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 30px;
+            text-align: center;
+            margin: 30px auto;
+            max-width: 500px;
+            border: 10px double #ffd700;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            animation: priceShine 2s infinite;
+        }
+
+        @keyframes priceShine {
+            0%, 100% { box-shadow: 0 15px 40px rgba(0,0,0,0.3); }
+            50% { box-shadow: 0 15px 40px rgba(255,215,0,0.8), inset 0 0 30px rgba(255,255,255,0.5); }
+        }
+
+        .price {
+            font-family: 'Bangers', cursive;
+            font-size: 4em;
+            text-shadow: 5px 5px 0px rgba(0,0,0,0.3);
+        }
+
+        .testimonial {
+            background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 20px 0;
+            border-left: 10px solid #ffeaa7;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            font-style: italic;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-size: 6em;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            opacity: 0.3;
+            font-family: 'Bangers', cursive;
+        }
+
+        .testimonial-author {
+            text-align: right;
+            font-weight: bold;
+            margin-top: 15px;
+            font-style: normal;
+        }
+
+        footer {
+            background: linear-gradient(135deg, #2d3436 0%, #000000 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 10px solid #ffd700;
+        }
+
+        .footer-content {
+            font-size: 1.2em;
+            line-height: 2;
+        }
+
+        .blink-text {
+            animation: blinkText 1s infinite;
+            color: #ffd700;
+            font-weight: bold;
+        }
+
+        @keyframes blinkText {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0; }
+        }
+
+        .rotating-emoji {
+            display: inline-block;
+            animation: rotateEmoji 2s linear infinite;
+            margin: 0 10px;
+        }
+
+        @keyframes rotateEmoji {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5em; }
+            .tagline { font-size: 1.2em; }
+            h2 { font-size: 2em; }
+            .cta-button { font-size: 1.8em; padding: 20px 40px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating bubbles -->
+    <div class="bubble" style="left: 10%; width: 80px; height: 80px; animation-delay: 0s;"></div>
+    <div class="bubble" style="left: 30%; width: 60px; height: 60px; animation-delay: 2s;"></div>
+    <div class="bubble" style="left: 50%; width: 100px; height: 100px; animation-delay: 4s;"></div>
+    <div class="bubble" style="left: 70%; width: 70px; height: 70px; animation-delay: 1s;"></div>
+    <div class="bubble" style="left: 85%; width: 90px; height: 90px; animation-delay: 3s;"></div>
+
+    <header>
+        <h1>🌊 AQUAPONEYBIKE 🚴</h1>
+        <p class="tagline">L'EXPÉRIENCE FITNESS ULTIME À ALLENNES-LES-MARAIS!</p>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <h2>Qu'est-ce que l'AquaPoneyBike?</h2>
+            <p style="font-size: 1.4em; text-align: center; line-height: 1.8; position: relative;">
+                <span class="rotating-emoji">🌊</span>
+                Imaginez la puissance du <strong style="color: #6c5ce7;">vélo aquatique</strong>, 
+                combinée à la grâce majestueuse d'un <strong style="color: #ff6b9d;">poney marin fantastique</strong>, 
+                le tout dans une <strong style="color: #00b894;">piscine olympique chauffée à 28°C</strong>!
+                <span class="rotating-emoji">🐴</span>
+                <br><br>
+                Notre méthode <span class="blink-text">RÉVOLUTIONNAIRE</span> et <span class="blink-text">EXCLUSIVE</span> 
+                développée par le Dr. Jean-Kévin Aquavélo (PhD en Hippologie Nautique) 
+                combine les bienfaits de <strong>3 disciplines</strong> en une seule!
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>LES BÉNÉFICES INCROYABLES!</h2>
+            <div class="benefit-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">💪</div>
+                    <div class="benefit-title">Muscles d'Acier</div>
+                    <p>Sculptez votre corps en pédalant contre la résistance aquatique! +347% de tonus musculaire en 3 semaines!</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🧘</div>
+                    <div class="benefit-title">Zénitude Absolue</div>
+                    <p>L'harmonie avec le poney aquatique procure une paix intérieure incomparable! Adieu le stress!</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔥</div>
+                    <div class="benefit-title">Brûle-Graisses Turbo</div>
+                    <p>Jusqu'à 2847 calories brûlées par séance! Résultats GARANTIS ou remboursé*!</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🌟</div>
+                    <div class="benefit-title">Énergie Cosmique</div>
+                    <p>Canalisez l'énergie vitale du poney pour booster votre aura! Sensation de légèreté pendant 72h!</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🦵</div>
+                    <div class="benefit-title">Cardio de Champion</div>
+                    <p>Améliorez votre endurance de 523%! Recommandé par 9 kinés sur 10**!</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <div class="benefit-title">Confiance en Soi</div>
+                    <p>Domptez votre poney aquatique et devenez la meilleure version de vous-même!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>NOS COURS EXCEPTIONNELS!</h2>
+            <div style="text-align: center; margin: 30px 0;">
+                <div style="background: linear-gradient(135deg, #a29bfe, #6c5ce7); color: white; padding: 30px; border-radius: 20px; margin: 20px 0; border: 5px solid #ffd700;">
+                    <h3 style="font-family: 'Righteous', cursive; font-size: 2em; margin-bottom: 15px;">🌅 COURS AURORE MAGIQUE</h3>
+                    <p style="font-size: 1.2em;">Lundi, Mercredi, Vendredi - 6h00 à 7h00</p>
+                    <p style="margin-top: 10px;">Commencez votre journée avec l'énergie du poney-licorne aquatique!</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #ffeaa7, #fdcb6e); padding: 30px; border-radius: 20px; margin: 20px 0; border: 5px solid #ff6b9d;">
+                    <h3 style="font-family: 'Righteous', cursive; font-size: 2em; margin-bottom: 15px;">🌊 COURS TSUNAMI POWER</h3>
+                    <p style="font-size: 1.2em;">Mardi, Jeudi - 19h00 à 20h30</p>
+                    <p style="margin-top: 10px;">Intensité MAXIMALE! Dépassez vos limites avec nos poneys athlétiques!</p>
+                </div>
+                
+                <div style="background: linear-gradient(135deg, #ff6b9d, #c06c84); color: white; padding: 30px; border-radius: 20px; margin: 20px 0; border: 5px solid #ffd700;">
+                    <h3 style="font-family: 'Righteous', cursive; font-size: 2em; margin-bottom: 15px;">🌈 COURS ZEN AQUATIQUE</h3>
+                    <p style="font-size: 1.2em;">Samedi, Dimanche - 10h00 à 11h30</p>
+                    <p style="margin-top: 10px;">Détente totale et communion spirituelle avec votre poney zen!</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>ILS ONT TESTÉ, ILS ADORENT!</h2>
+            
+            <div class="testimonial">
+                <p>"Depuis que je fais de l'AquaPoneyBike, ma vie a COMPLÈTEMENT changé! J'ai perdu 47kg en 2 mois et mon poney aquatique Sparkles est devenu mon meilleur ami! Je ne peux plus m'en passer!"</p>
+                <div class="testimonial-author">- Martine D., 52 ans, Allennes-les-Marais</div>
+            </div>
+            
+            <div class="testimonial">
+                <p>"Au début j'étais sceptique, mais après ma première séance, j'ai ressenti une connexion cosmique avec Thunder, mon poney turquoise. Mes chakras n'ont jamais été aussi alignés! MERCI AquaPoneyBike!"</p>
+                <div class="testimonial-author">- Kevin B., 28 ans, Lille</div>
+            </div>
+            
+            <div class="testimonial">
+                <p>"Mon médecin m'a dit que mes analyses sanguines étaient celles d'un athlète olympique après seulement 5 séances! Et en bonus, j'ai développé une télépathie avec mon poney Rainbow. C'est magique!"</p>
+                <div class="testimonial-author">- Chantal M., 67 ans, Seclin</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>TARIFS IMBATTABLES!</h2>
+            
+            <div class="price-box">
+                <p style="font-size: 1.5em; margin-bottom: 10px;">SÉANCE DÉCOUVERTE</p>
+                <div class="price">29,99€</div>
+                <p style="font-size: 1.2em; margin-top: 10px;">Inclus: Poney, Vélo, Bonnet de bain licorne OFFERT!</p>
+            </div>
+            
+            <div class="price-box" style="background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);">
+                <p style="font-size: 1.5em; margin-bottom: 10px;">⭐ FORFAIT GOLD ⭐</p>
+                <div class="price">199€/mois</div>
+                <p style="font-size: 1.2em; margin-top: 10px;">ILLIMITÉ + Accès VIP au jacuzzi à poneys!</p>
+            </div>
+            
+            <div class="price-box" style="background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%); color: #000;">
+                <p style="font-size: 1.5em; margin-bottom: 10px;">👑 FORFAIT PLATINE PREMIUM 👑</p>
+                <div class="price" style="text-shadow: 3px 3px 0px rgba(255,255,255,0.5);">499€/mois</div>
+                <p style="font-size: 1.2em; margin-top: 10px;">Cours privés + Ton propre poney personnalisé + Suivi nutritionnel équestre!</p>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin: 50px 0;">
+            <a href="#" class="cta-button">RÉSERVEZ MAINTENANT!</a>
+            <br>
+            <p style="font-size: 1.5em; margin-top: 30px; background: rgba(255,255,255,0.9); padding: 20px; border-radius: 15px; border: 5px dashed #ff6b9d;">
+                <span class="blink-text">⚡ OFFRE SPÉCIALE ⚡</span><br>
+                Les 50 premiers inscrits reçoivent un <strong>tapis de yoga flottant à motifs poneys</strong> d'une valeur de 89€!
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p style="font-family: 'Bangers', cursive; font-size: 2em; color: #ffd700; margin-bottom: 20px;">
+                🌊 CENTRE AQUAPONEYBIKE ALLENNES 🐴
+            </p>
+            <p>📍 123 Rue de l'Équitation Aquatique, 59211 Allennes-les-Marais</p>
+            <p>📞 06 12 34 56 78</p>
+            <p>📧 contact@aquaponeybike-allennes.fr</p>
+            <p style="margin-top: 20px;">Ouvert 7j/7 de 6h à 22h</p>
+            <p style="font-size: 0.8em; margin-top: 30px; opacity: 0.7;">
+                *Conditions: remboursement valable uniquement si vous n'avez pas vu de résultats après 10 ans de pratique quotidienne<br>
+                **Sondage réalisé auprès de 10 kinésithérapeutes dont 9 sont actionnaires de la société<br>
+                Les poneys sont fictifs. Toute ressemblance avec de vrais poneys aquatiques serait fortuite.
+            </p>
+            <p style="margin-top: 20px; font-size: 1.2em;">
+                © 2026 AquaPoneyBike™ - Tous droits réservés - Concept déposé à l'INPI
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Add click effect on CTA button
+        document.querySelector('.cta-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('🎉 FÉLICITATIONS! 🎉\n\nVous êtes sur le point de changer votre vie!\n\nAppellez-nous au 06 12 34 56 78 pour réserver votre première séance d\'AquaPoneyBike!\n\n🌊🐴🚴💦');
+        });
+
+        // Create more bubbles dynamically
+        setInterval(() => {
+            const bubble = document.createElement('div');
+            bubble.className = 'bubble';
+            bubble.style.left = Math.random() * 100 + '%';
+            bubble.style.width = (Math.random() * 60 + 40) + 'px';
+            bubble.style.height = bubble.style.width;
+            bubble.style.animationDuration = (Math.random() * 3 + 4) + 's';
+            document.body.appendChild(bubble);
+            
+            setTimeout(() => bubble.remove(), 7000);
+        }, 2000);
+    </script>
+</body>
+</html>
